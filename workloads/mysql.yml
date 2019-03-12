@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -7,7 +8,7 @@ metadata:
     app: wordpress
 spec:
   ports:
-    - port: 3306
+  - port: 3306
   selector:
     app: wordpress
     tier: mysql
@@ -22,12 +23,12 @@ metadata:
     app: wordpress
 spec:
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   resources:
     requests:
       storage: 20Gi
 ---
-apiVersion: apps/v1 
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress-mysql
@@ -51,7 +52,7 @@ spec:
         tier: mysql
     spec:
       containers:
-      - image: mysql:5.6.39
+      - image: mysql:5.6.43
         name: mysql
         resources:
           limits:
@@ -59,7 +60,7 @@ spec:
             memory: 512Mi
           requests:
             cpu: 100m
-            memory: 256Mi    
+            memory: 256Mi
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
