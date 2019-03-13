@@ -37,7 +37,7 @@ metadata:
     app: wordpress
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.wordpress: semver:~4.9
+    flux.weave.works/tag.wordpress: semver:~5.0
 spec:
   selector:
     matchLabels:
