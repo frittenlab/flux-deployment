@@ -52,7 +52,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:4.9.8
+      - image: wordpress:5.0.3
         name: wordpress
         resources:
           limits:
