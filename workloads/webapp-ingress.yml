@@ -1,0 +1,22 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: web.plgrnd.be 
+  namespace: webapp
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: 'true'
+spec:
+  tls:
+  - hosts:
+    - web.plgrnd.be 
+    secretName: web-plgrnd-tls
+  rules:
+  - host: web.plgrnd.be 
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: webapp-svc
+          servicePort: http
