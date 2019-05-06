@@ -5,7 +5,7 @@ metadata:
   labels:
     app: webapp 
   name: webapp
-  namespace: workshop
+  namespace: webapp
 spec:
   replicas: 2 
   selector:
@@ -51,7 +51,7 @@ metadata:
   name: webapp-svc
   labels:
     app: webapp 
-  namespace: workshop
+  namespace: webapp
 spec:
   ports:
     - port: 80
