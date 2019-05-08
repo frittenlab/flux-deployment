@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: web.plgrnd.be 
+  name: webapp.metakube.plgrnd.be 
   namespace: webapp
   annotations:
     kubernetes.io/ingress.class: nginx
@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - web.plgrnd.be 
+    - webapp.metakube.plgrnd.be 
     secretName: web-plgrnd-tls
   rules:
-  - host: web.plgrnd.be 
+  - host: webapp.metakube.plgrnd.be 
     http:
       paths:
       - path: /
